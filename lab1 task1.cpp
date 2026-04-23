@@ -5,18 +5,15 @@
 
 #include "mbed.h"
 
+DigitalOut led1(LED1);
+DigitalOut led2(LED2);   // Added
+DigitalOut led3(LED3);   // Added
 
-// Blinking rate in milliseconds
-#define BLINKING_RATE     500ms
-
-
-int main()
-{
-    // Initialise the digital pin LED1 as an output
-    DigitalOut led(LED1);
-
+int main() {
     while (true) {
-        led = !led;
-        ThisThread::sleep_for(BLINKING_RATE);
+        led1 = !led1;
+        led2 = !led2;    // Added
+        led3 = !led3;    // Added
+        ThisThread::sleep_for(500ms);
     }
 }
